@@ -22,7 +22,12 @@ void saviMali(){
 void ispraviMali(){
   servoMali.write(0);
 }
-
+void saviDomali(){
+  servoDomali.write(40);
+}
+void ispraviDomali(){
+  servoDomali.write(180);
+}
 void saviSrednji(){
   servoSrednji.write(0);
 }
@@ -40,14 +45,13 @@ void setup() {
   pinMode(pinSaka, OUTPUT);
 
   servoMali.attach(pinMali);
+  servoDomali.attach(pinDomali);
   servoSrednji.attach(pinSrednji);
 }
 
 void loop() {
-  saviMali();
-  saviSrednji();
+  saviDomali();
   delay(1500);
-  ispraviMali();
-  ispraviSrednji();
+  ispraviDomali();
   delay(1500);
 }
