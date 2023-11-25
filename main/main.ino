@@ -129,7 +129,14 @@ void pokaziSlovo(char slovo)
   ispraviSve();
 }
 
-
+void pokaziSlovoSaUlaza()
+{
+  if (Serial.available() > 0)
+  {
+    char slovo = Serial.read();
+    pokaziSlovo(slovo);
+  }
+}
 
 void setup() {
   pinMode(pinMali, OUTPUT);
@@ -147,9 +154,11 @@ void setup() {
   servoZglob.attach(pinPalacZglob);
   servoSaka.attach(pinSaka);
   //servoPalac.attach(pinPalac);
+
+  Serial.begin(9600);
 }
 
 void loop() {
-  pokaziSlovo('G');
+  pokaziSlovoSaUlaza();
   delay(10);
 }
