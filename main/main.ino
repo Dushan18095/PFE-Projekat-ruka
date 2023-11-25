@@ -23,7 +23,7 @@ void ispraviMali(){
   servoMali.write(0);
 }
 void saviDomali(){
-  servoDomali.write(40);
+  servoDomali.write(20);
 }
 void ispraviDomali(){
   servoDomali.write(180);
@@ -38,7 +38,7 @@ void saviKaziprst(){
   servoKaziprst.write(40);
 }
 void ispraviKaziprst(){
-  servoKaziprst.write(130);
+  servoKaziprst.write(140);
 }
 void saviPalac(){
   servoKaziprst.write(180);
@@ -49,6 +49,22 @@ void ispraviPalac(){
 void saviKaziprstIPalac(){
   servoKaziprst.write(0);
 }
+void ispraviSve(){
+  servoMali.write(0);
+  servoDomali.write(180);
+  servoSrednji.write(180);
+  servoKaziprst.write(130);
+  delay(3000);
+}
+void A(){
+  saviMali();
+  saviDomali();
+  saviSrednji();
+  saviKaziprstIPalac();
+  delay(3000);
+  ispraviSve();
+}
+
 void setup() {
   pinMode(pinMali, OUTPUT);
   pinMode(pinDomali, OUTPUT);
@@ -66,9 +82,5 @@ void setup() {
 }
 
 void loop() {
-  ispraviPalac();
-  ispraviKaziprst();
-  delay(1500);
-  saviKaziprst();
-  delay(1500);
+  A();
 }
