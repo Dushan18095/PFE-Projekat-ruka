@@ -14,6 +14,8 @@ Servo servoMali;
 Servo servoDomali;
 Servo servoSrednji;
 Servo servoKaziprst;
+Servo servoZglob;
+Servo servoSaka;
 Servo servoPalac;
 
 void saviMali(){
@@ -54,16 +56,39 @@ void ispraviSve(){
   servoDomali.write(180);
   servoSrednji.write(180);
   servoKaziprst.write(130);
-  delay(3000);
+  servoZglob.write(120);
+  delay(1500);
 }
-void A(){
-  saviMali();
-  saviDomali();
-  saviSrednji();
-  saviKaziprstIPalac();
-  delay(3000);
-  ispraviSve();
+void saviZglob(int deg){
+  servoZglob.write(deg);
 }
+
+void pokaziSlovo(char slovo)
+{
+  if(slovo == 'A')
+  {
+    saviMali();
+    saviDomali();
+    saviSrednji();
+    saviKaziprstIPalac();
+    delay(1500);
+    ispraviSve();
+  }
+  else if(slovo == 'B')
+  {
+    ispraviSve();
+    saviPalac();
+    saviZglob(60);
+    delay(1500);
+    ispraviSve();
+  }
+  else if(slovo == 'C')
+  {
+    
+  }
+}
+
+
 
 void setup() {
   pinMode(pinMali, OUTPUT);
@@ -78,9 +103,12 @@ void setup() {
   servoDomali.attach(pinDomali);
   servoSrednji.attach(pinSrednji);
   servoKaziprst.attach(pinKaziprst);
+  servoZglob.attach(pinPalacZglob);
+  servoSaka.attach(pinSaka);
   //servoPalac.attach(pinPalac);
 }
 
 void loop() {
-  A();
+  pokaziSlovo('B');
+  delay(10);
 }
