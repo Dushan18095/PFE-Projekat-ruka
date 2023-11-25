@@ -57,12 +57,15 @@ void ispraviSve(){
   servoSrednji.write(180);
   servoKaziprst.write(130);
   servoZglob.write(120);
+  servoSaka.write(90);
   delay(1500);
 }
 void saviZglob(int deg){
   servoZglob.write(deg);
 }
-
+void saviSaku(int deg){
+  servoSaka.write(deg);
+}
 void pokaziSlovo(char slovo)
 {
   if(slovo == 'A')
@@ -84,7 +87,14 @@ void pokaziSlovo(char slovo)
   }
   else if(slovo == 'C')
   {
-    
+    servoMali.write(80);
+    servoDomali.write(110);
+    servoSrednji.write(70);
+    servoKaziprst.write(30);
+    saviZglob(50);
+    servoSaka.write(180);
+    delay(1500);
+    ispraviSve();
   }
 }
 
@@ -109,6 +119,6 @@ void setup() {
 }
 
 void loop() {
-  pokaziSlovo('B');
+  pokaziSlovo('C');
   delay(10);
 }
