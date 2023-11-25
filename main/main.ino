@@ -75,7 +75,6 @@ void pokaziSlovo(char slovo)
     saviSrednji();
     saviKaziprstIPalac();
     delay(1500);
-    ispraviSve();
   }
   else if(slovo == 'B')
   {
@@ -83,7 +82,6 @@ void pokaziSlovo(char slovo)
     saviPalac();
     saviZglob(60);
     delay(1500);
-    ispraviSve();
   }
   else if(slovo == 'C')
   {
@@ -94,7 +92,6 @@ void pokaziSlovo(char slovo)
     saviZglob(50);
     servoSaka.write(180);
     delay(1500);
-    ispraviSve();
   }
   else if(slovo == 'D')
   {
@@ -103,6 +100,30 @@ void pokaziSlovo(char slovo)
     saviSrednji();
     saviPalac();
     saviZglob(50);
+    delay(1500);
+  }
+  else if(slovo == 'E')
+  {
+    saviMali();
+    saviDomali();
+    saviSrednji();
+    saviKaziprstIPalac();
+    saviZglob(50);
+    delay(1500);
+  }
+  else if(slovo == 'F')
+  {
+    saviKaziprstIPalac();
+    saviZglob(50);
+    delay(1500);
+  }
+  else if(slovo == 'G')
+  {
+    saviMali();
+    saviDomali();
+    saviSrednji();
+    saviPalac();
+    saviZglob(90);
     delay(1500);
   }
   ispraviSve();
@@ -129,9 +150,6 @@ void setup() {
 }
 
 void loop() {
-  pokaziSlovo('D');
-  pokaziSlovo('A');
-  pokaziSlovo('C');
-  pokaziSlovo('A');
+  pokaziSlovo('G');
   delay(10);
 }
