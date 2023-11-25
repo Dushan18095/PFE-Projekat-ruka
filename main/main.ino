@@ -96,6 +96,16 @@ void pokaziSlovo(char slovo)
     delay(1500);
     ispraviSve();
   }
+  else if(slovo == 'D')
+  {
+    saviMali();
+    saviDomali();
+    saviSrednji();
+    saviPalac();
+    saviZglob(50);
+    delay(1500);
+  }
+  ispraviSve();
 }
 
 
@@ -119,6 +129,9 @@ void setup() {
 }
 
 void loop() {
+  pokaziSlovo('D');
+  pokaziSlovo('A');
   pokaziSlovo('C');
+  pokaziSlovo('A');
   delay(10);
 }
