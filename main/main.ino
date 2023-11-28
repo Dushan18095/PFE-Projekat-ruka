@@ -126,15 +126,145 @@ void pokaziSlovo(char slovo)
     saviZglob(90);
     delay(1500);
   }
+  else if(slovo == 'H')
+  {
+    saviMali();
+    saviDomali();
+    saviPalac();
+    saviZglob(40);
+    delay(1000);
+  }
+  else if(slovo == 'I')
+  {
+    saviDomali();
+    saviSrednji();
+    saviKaziprstIPalac();
+    delay(1500);
+  }
+  else if(slovo == 'J')
+  {
+    saviDomali();
+    saviSrednji();
+    saviKaziprstIPalac();
+    delay(700);
+    saviSaku(40);
+    delay(400);
+    saviSaku(90);
+    delay(300);
+  }
+  else if(slovo == 'K')
+  {
+    saviMali();
+    saviDomali();
+    saviPalac();
+    saviZglob(50);
+    delay(1500);
+  }
+  else if(slovo == 'L')
+  {
+    saviMali();
+    saviDomali();
+    saviSrednji();
+    delay(1500);
+  }
+  else if(slovo == 'M')
+  {
+    saviMali();
+    saviPalac();
+    saviZglob(40);
+    delay(1500);
+  }
+  else if(slovo == 'N')
+  {
+    saviMali();
+    saviDomali();
+    saviPalac();
+    saviZglob(40);
+    delay(1500);
+  }
+  else if(slovo == 'O')
+  {
+    servoMali.write(100);
+    servoDomali.write(90);
+    servoSrednji.write(50);
+    servoKaziprst.write(30);
+    saviZglob(40);
+    delay(1500);
+  }
+  else if(slovo == 'P')
+  {
+    servoMali.write(80);
+    servoDomali.write(120);
+    servoSrednji.write(100);
+    saviPalac();
+    saviZglob(40);
+    delay(1500);
+  }
+  else if(slovo == 'P')
+  {
+    servoMali.write(80);
+    servoDomali.write(120);
+    servoSrednji.write(100);
+    saviPalac();
+    saviZglob(40);
+    delay(1500);
+  }
+  else if(slovo == 'R')
+  {
+    saviMali();
+    saviDomali();
+    saviPalac();
+    delay(1500);
+  }
+  else if(slovo == 'S')
+  {
+    saviMali();
+    saviDomali();
+    saviSrednji();
+    saviKaziprstIPalac();
+    saviZglob(90);
+    delay(1500);
+  }
+  else if(slovo == 'T')
+  {
+    saviMali();
+    saviDomali();
+    saviSrednji();
+    saviSaku(48);
+    delay(1500);
+  }
+  else if(slovo == 'U')
+  {
+    saviMali();
+    saviDomali();
+    saviPalac();
+    saviZglob(40);
+    delay(1400);
+  }
+  else if(slovo == 'V')
+  {
+    saviMali();
+    saviDomali();
+    saviPalac();
+    saviZglob(40);
+    delay(1400);
+  }
+  else if(slovo == 'V')
+  {
+    saviMali();
+    saviDomali();
+    saviPalac();
+    saviZglob(40);
+    delay(1400);
+  }
   ispraviSve();
 }
-
 void pokaziSlovoSaUlaza()
 {
   if (Serial.available() > 0)
   {
     char slovo = Serial.read();
-    pokaziSlovo(slovo);
+    pokaziSlovo(toupper(slovo));
   }
 }
 
@@ -154,7 +284,7 @@ void setup() {
   servoZglob.attach(pinPalacZglob);
   servoSaka.attach(pinSaka);
   //servoPalac.attach(pinPalac);
-
+  ispraviSve();
   Serial.begin(9600);
 }
 
